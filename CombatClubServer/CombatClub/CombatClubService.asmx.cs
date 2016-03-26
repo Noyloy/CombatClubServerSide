@@ -18,7 +18,7 @@ namespace CombatClubServer
     public class CombatClubService : System.Web.Services.WebService
     {
         public static Dictionary<int, GameSession> games;
-
+        //
         [WebMethod]
         public string HelloWorld()
         {
