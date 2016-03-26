@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CombatClub">
+  <DataContextMoniker Name="/CombatClubDataContext" />
+  <nestedChildShapes>
+    <classShape Id="40740fdc-f19e-4a95-aedf-ee11a2f1d3e9" absoluteBounds="2.875, 2.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CombatClubDataContext/Player" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec5bc8d7-289e-4f97-b42f-230909f5d809" absoluteBounds="2.8899999999999997, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
