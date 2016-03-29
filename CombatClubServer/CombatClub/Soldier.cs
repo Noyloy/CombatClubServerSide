@@ -10,5 +10,11 @@ namespace CombatClubServer.CombatClub
         public Player DataPlayer;
         public Location Location;
         public Health Health;
+
+        public Soldier(int soldierID)
+        {
+            CombatClubDataContext ccdc = new CombatClubDataContext();
+            DataPlayer = ccdc.Players.Where(p => p.Id == soldierID).FirstOrDefault();
+        }
     }
 }
