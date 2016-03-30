@@ -14,8 +14,7 @@ namespace CombatClubServer.CombatClub
 
         public TeamSide TeamSide;
         public Dictionary<int, Soldier> SoldiersDict = new Dictionary<int, Soldier>();
-        // Gets Set Each Time Soldier Joins or Leaves
-        public AutoResetEvent TeamCountChanged = new AutoResetEvent(false);
+        public Dictionary<int, EnemyMark> EnemyDict = new Dictionary<int, EnemyMark>();
 
         public Team(TeamSide teamSide)
         {
@@ -28,7 +27,6 @@ namespace CombatClubServer.CombatClub
 
             if (SoldiersDict.ContainsKey(soldier.DataPlayer.Id)) return true;
             SoldiersDict.Add(soldier.DataPlayer.Id, soldier);
-            for (int i = 0; i < SoldiersDict.Count(); i++) TeamCountChanged.Set();
             return true;
         }
 
@@ -38,7 +36,19 @@ namespace CombatClubServer.CombatClub
             if (!SoldiersDict.ContainsKey(soldierID)) return false;
 
             SoldiersDict.Remove(soldierID);
-            for (int i = 0; i < SoldiersDict.Count(); i++) TeamCountChanged.Set();
+            return true;
+        }
+
+        public EnemyMark MarkEnemy(Location location)
+        {
+            EnemyMark tmp_em = new EnemyMark(location);
+            EnemyDict.Add(tmp_em.ID, tmp_em);
+            return tmp_em;
+        }
+        public bool UnmarkEnemy(int enemyMarkID)
+        {
+            if (!EnemyDict.ContainsKey(enemyMarkID)) return false;
+            EnemyDict.Remove(enemyMarkID);
             return true;
         }
 

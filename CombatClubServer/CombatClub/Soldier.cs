@@ -15,6 +15,8 @@ namespace CombatClubServer.CombatClub
         {
             CombatClubDataContext ccdc = new CombatClubDataContext();
             DataPlayer = ccdc.Players.Where(p => p.Id == soldierID).FirstOrDefault();
+            Location = new Location(0f, 0f);
+            Health = new Health();
         }
     }
 }

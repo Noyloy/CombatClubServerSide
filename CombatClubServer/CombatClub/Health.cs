@@ -16,6 +16,11 @@ namespace CombatClubServer.CombatClub
             Percentage = 100;
             IsAlive = true;
         }
+        public Health(int hp)
+        {
+            IsAlive = (hp > 0);
+            Percentage = hp;
+        }
 
         public void Kill()
         {

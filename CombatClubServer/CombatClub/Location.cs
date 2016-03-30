@@ -12,6 +12,7 @@ namespace CombatClubServer.CombatClub
         public float Long = 0f;
         public String Name;
 
+        public Location() { }
         public Location(float lat, float lon, String name = "")
         {
             Lat = lat;
