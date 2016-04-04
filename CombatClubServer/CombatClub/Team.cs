@@ -11,7 +11,9 @@ namespace CombatClubServer.CombatClub
     public class Team
     {
         public const int TEAM_CAP = 5;
-        public int NumberTickets = TEAM_CAP * 2;
+        public const int TICKETS_CAP = TEAM_CAP * 2;
+
+        public int NumberTickets = TICKETS_CAP;
 
         public TeamSide TeamSide;
         public Dictionary<int, Soldier> SoldiersDict = new Dictionary<int, Soldier>();

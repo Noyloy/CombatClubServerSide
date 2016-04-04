@@ -50,7 +50,17 @@ namespace CombatClubServer
         [WebMethod]
         public string GetGames()
         {
-            return JsonConvert.SerializeObject(games.Values.Select(game => new { name = game.GameName, startTime = game.gameStartTime, gameTime = game.MaxGameTime, players = game.PlayersCount }).ToList());
+            return JsonConvert.SerializeObject(games.Values.Select(game => 
+            new {   id = game.GameID,
+                    name = game.GameName,
+                    startTime = game.gameStartTime,
+                    gameTime = game.MaxGameTime,
+                    players0 = game.Teams[0].SoldiersDict.Count,
+                    players1 = game.Teams[1].SoldiersDict.Count,
+                    tickets0 = game.Teams[0].NumberTickets,
+                    tickets1 = game.Teams[1].NumberTickets,
+                    playersCap = Team.TEAM_CAP,
+                    ticketsCap = Team.TICKETS_CAP }).ToList());
         }
         [WebMethod]
         public string StartGame(int gameID,int soldierID)

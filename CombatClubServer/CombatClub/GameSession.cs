@@ -13,6 +13,7 @@ namespace CombatClubServer.CombatClub
         public const int TEAM_COUNT = 2;
 
         private int gameID;
+        public int GameID { get { return gameID; } }
         public DateTime gameStartTime;
 
         public string GameName;
