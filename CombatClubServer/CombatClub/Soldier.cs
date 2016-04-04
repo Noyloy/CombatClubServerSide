@@ -13,6 +13,14 @@ namespace CombatClubServer.CombatClub
 
         public bool IsReady = false;
 
+        public static string GetSoldierID(string name, string pass)
+        {
+            CombatClubDataContext ccdc = new CombatClubDataContext();
+            Player player = ccdc.Players.Where(p => p.Name == name && p.Password == pass).FirstOrDefault();
+            if (player == null) return "-1";
+            return player.Id + "";
+        }
+
         public Soldier(int soldierID)
         {
             CombatClubDataContext ccdc = new CombatClubDataContext();

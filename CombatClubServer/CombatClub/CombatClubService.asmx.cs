@@ -23,6 +23,12 @@ namespace CombatClubServer
         public static Dictionary<int,GameSession> games = new Dictionary<int, GameSession>();
 
         [WebMethod]
+        public string PassConfirm(string name, string pass)
+        {
+            return Soldier.GetSoldierID(name,pass);
+        }
+
+        [WebMethod]
         public string CreateGame(string gameName)
         {
             if (games.Count() >= MaxGameCount) return new BasicResult(-1,"Server Reached Max Game Count ("+MaxGameCount+")","").ToJSON();

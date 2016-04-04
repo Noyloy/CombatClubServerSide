@@ -257,7 +257,9 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
-    <Content Include="Bundle.config" />
+    <Content Include="Bundle.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -387,6 +389,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CombatClub\BasicResult.cs" />
+    <Compile Include="CombatClub\ClientSoldier.cs" />
     <Compile Include="CombatClub\CombatClub.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -396,6 +400,7 @@
       <DependentUpon>CombatClubService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CombatClub\EnemyMark.cs" />
     <Compile Include="CombatClub\GameSession.cs" />
     <Compile Include="CombatClub\Health.cs" />
     <Compile Include="CombatClub\Location.cs" />
