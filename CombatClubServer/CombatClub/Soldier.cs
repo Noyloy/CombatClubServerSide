@@ -11,6 +11,8 @@ namespace CombatClubServer.CombatClub
         public Location Location;
         public Health Health;
 
+        public bool IsReady = false;
+
         public Soldier(int soldierID)
         {
             CombatClubDataContext ccdc = new CombatClubDataContext();
